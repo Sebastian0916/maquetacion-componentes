@@ -1,0 +1,85 @@
+@use "@angular/material" as mat;
+@use "./mixins.scss" as variants;
+@use "sass:map";
+
+@import "./colors";
+
+@include mat.core();
+
+//LIGHT MODE COLORS
+$primary-color: mat.define-palette($primary);
+$accent-color: mat.define-palette($accent);
+$warn-color: mat.define-palette($warn);
+$success-color: mat.define-palette($success);
+$warning-color: mat.define-palette($warning);
+$info-color: mat.define-palette($info);
+
+//DARK MODE COLOR
+$dark-primary-color: mat.define-palette($dark-primary);
+$dark-accent-color: mat.define-palette($dark-accent);
+$dark-warn-color: mat.define-palette($dark-warn);
+$dark-success-color: mat.define-palette($dark-success);
+$dark-info-color: mat.define-palette($dark-info);
+$dark-warning-color: mat.define-palette($dark-warning);
+
+// DEFINITION THEME
+$light-background-default: #fbfbfb;
+$dark-background-default: #1a1a1b;
+// LIGHT THEME
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-color,
+      accent: $accent-color,
+      warn: $warn-color,
+    ),
+    density: 0,
+  )
+);
+$light-theme: map.deep-merge(
+  $light-theme,
+  (
+    success: $success-color,
+    warning: $warning-color,
+    info: $info-color,
+    color: (
+      success: $success-color,
+      warning: $warning-color,
+      info: $info-color,
+    ),
+  )
+);
+//DARK THEME
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary-color,
+      accent: $dark-accent-color,
+      warn: $dark-warn-color,
+    ),
+    density: 0,
+  )
+);
+
+$dark-theme: map.deep-merge(
+  $dark-theme,
+  (
+    success: $dark-success-color,
+    warning: $dark-warning-color,
+    info: $dark-info-color,
+    color: (
+      success: $dark-success-color,
+      warning: $dark-warning-color,
+      info: $dark-info-color,
+    ),
+  )
+);
+
+$light-theme-variants: (
+  success: $success-color,
+  info: $info-color,
+  warning: $warning-color,
+);
+
+  @include mat.all-component-themes($light-theme);
+  @include variants.color($light-theme, $light-theme-variants);
