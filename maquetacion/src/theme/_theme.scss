@@ -1,7 +1,6 @@
+@use "sass:map";
 @use "@angular/material" as mat;
 @use "./mixins.scss" as variants;
-@use "sass:map";
-
 @import "./colors";
 
 @include mat.core();
@@ -81,5 +80,6 @@ $light-theme-variants: (
   warning: $warning-color,
 );
 
-  @include mat.all-component-themes($light-theme);
-  @include variants.color($light-theme, $light-theme-variants);
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+@include variants.color($light-theme, $light-theme-variants);
