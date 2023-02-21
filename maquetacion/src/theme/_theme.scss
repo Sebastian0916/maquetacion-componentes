@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "@angular/material" as mat;
 @use "./mixins.scss" as variants;
+@import "./typography";
 @import "./colors";
 
 @include mat.core();
