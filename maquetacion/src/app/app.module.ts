@@ -6,14 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from 'src/theme/material.module';
 import { SizeDirective } from 'src/theme/directivas/size.directive';
-
 @NgModule({
-  declarations: [AppComponent, SizeDirective ],
+  declarations: [AppComponent, SizeDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule, 
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
