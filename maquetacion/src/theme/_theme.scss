@@ -3,6 +3,7 @@
 @use "./mixins.scss" as variants;
 @import "./typography";
 @import "./colors";
+@import "./sizes";
 
 @include mat.core();
 
