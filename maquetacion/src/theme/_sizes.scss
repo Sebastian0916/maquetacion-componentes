@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "@angular/material" as mat;
 @use "@material/button";
-@use "@material/chips";
+// @use "@material/chips";
 @import "./mixins";
 @include mat.core();
 
@@ -11,162 +11,165 @@
     display: none;
   }
 }
-// COMPONENTES SIN TAMAÑOS
-.mat-mdc-chip,
-.mat-md-chip-option {
-  border-radius: 4px !important;
-}
-//PROGRESS SPINNER
-.mat-mdc-progress-spinner {
-  width: 4rem !important;
-  height: 4rem !important;
-}
-// TOOLBAR
-.mat-toolbar-single-row {
-  height: 6rem !important;
-}
-//EXPANSION PANEL
-.mat-expansion-panel-header {
-  height: 4.4rem !important;
-}
-.mat-expansion-panel-header.mat-expanded {
-  height: 6rem !important;
-}
+//////////// SMALL
+///
+// Conversion de REM to PX, 1rem = 10px
 
-.medium {
-  //////////////// MEDIUM ////////////////
-  .mat-mdc-menu-item.mdc-list-item {
-    min-height: 4.4rem !important;
-  }
-  // CHECKBOX
-  &.mat-mdc-checkbox .mdc-checkbox {
-    padding: calc(
-      (var(--mdc-checkbox-state-layer-size, 4.2rem) - 1.8rem) / 2
-    ) !important;
-  }
-  .mdc-checkbox__background {
-    margin: 0.1rem;
-  }
-  // Componentes con pseudo-clase  :not()
-  // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
+// Componentes con pseudo-clase  :not()
+// Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
+:not(.medium) {
   &.mat-mdc-chip,
   &.mat-md-chip-option {
     &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
-      width: 2rem;
-      height: 2rem;
-    }
-    &.mat-mdc-standard-chip .mdc-evolution-chip__icon--trailing {
-      @include icon-size(2.4rem !important, null);
+      width: 1.6rem;
+      height: 1.6rem;
     }
     .mat-mdc-chip-remove .mat-icon {
       @include icon-size(2.2rem !important, 2rem !important);
     }
   }
-  //TEXTFIELD STANDDAR
-  .mat-mdc-form-field {
-    &:not(.mat-form-field-appearance-fill) {
-      @include mat.form-field-density(-1);
-    }
-    &:not(.mat-form-field-appearance-outline) {
-      @include mat.form-field-density(-1);
-    }
+}
+//TEXTFIELD STANDARD
+.mat-mdc-form-field {
+  &:not(.mat-form-field-appearance-fill) {
+    @include mat.form-field-density(-1);
   }
-  // BUTTON
-  &.mdc-button {
-    &:not(.large, .small) {
-      &.mdc-button {
-        @include button.density(-1);
-      }
-    }
+  &:not(.mat-form-field-appearance-outline) {
+    @include mat.form-field-density(-1);
   }
-  //PROGRES SPINER
+}
 
-  /// LIST with icon
-  @include mat.list-density(-1);
-  span.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
-    display: flex;
-    align-items: center;
-  }
-  // ICON
-  .mat-icon {
-    @include icon-size(2rem !important, 1.8rem !important);
-  }
-  //BUTTON TOGGLE
-  @include mat.button-toggle-density(-3);
-
-  // ICON BUTTON
-  @include mat.icon-button-density(-1);
-  &.mat-mdc-icon-button.mat-mdc-button-base {
-    @include icon-size(4.4rem, null);
-    padding: 1.1rem;
-    & > .mat-icon {
-      @include icon-size(2rem, 1.8rem);
+// BUTTON
+.mdc-button {
+  &:not(.large, .small) {
+    &.mdc-button {
+      @include button.density(-2.5);
     }
-  }
-  &.mat-icon {
-    @include icon-size(2rem, 1.8rem);
-  }
-  // TAB
-  .mat-mdc-tab.mdc-tab {
-    height: 2.857142857142857rem;
-  }
-  // SLIDER
-  .mat-mdc-slider
-    .mdc-slider__track--inactive
-    .mat-mdc-slider
-    .mdc-slider__track {
-    --mdc-slider-inactive-track-height: 0.2857142857142857rem;
-  }
-  .mat-mdc-slider .mdc-slider__track--active {
-    --mdc-slider-inactive-track-height: 0.4285714285714286rem;
-  }
-  // FAB
-  &.mat-mdc-extended-fab {
-    height: 3.8rem !important;
-    & > .mat-icon {
-      @include icon-size(2.2rem !important, 2rem !important);
-    }
-  }
-  &.mdc-fab:not(.mdc-fab--extended) {
-    & > .mat-icon {
-      @include icon-size(2.4rem !important, 2.2rem !important);
+    & .mat-icon {
+      height: 1.333rem !important;
     }
   }
 }
 
-//////////////// LARGE ////////////////
+//PROGRES SPINER
+.mat-mdc-progress-spinner {
+  width: 4rem !important;
+  height: 4rem !important;
+}
 
-.large {
-  // Componentes con pseudo-clase  :not()
-  // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, TEXTFIELD )
-  &:not(.small) {
-    &.mdc-button {
-      @include button.density(0);
+// ICON
+.mat-icon {
+  @include icon-size(1.6rem !important, 1.3rem !important);
+}
+
+//BUTTON TOGGLE
+.mat-button-toggle-group {
+  @include mat.button-toggle-density(-6);
+}
+
+// EXPANSION PANEL
+.mat-expansion-panel {
+  .mat-expansion-panel-header.mat-expanded {
+    height: 6rem;
+  }
+  & .mat-expansion-panel-header {
+    height: 4.4rem;
+  }
+  & .material-icons {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+// LIST with icon
+.mdc-list {
+  @include mat.icon-button-density(-3);
+  @include mat.list-density(-3);
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    padding: 1rem;
+  }
+  .mat-icon {
+    @include icon-size(1.8rem, 1.8rem);
+  }
+  .mat-mdc-icon-button .mat-mdc-button-touch-target {
+    @include icon-size(3.6rem, null);
+  }
+}
+
+// SUFFIX
+.mat-mdc-form-field-icon-suffix > .mat-icon {
+  padding: 0.5714285714285714rem;
+}
+// TAB
+.mat-mdc-tab-header {
+  & .mat-mdc-tab.mdc-tab {
+    height: 4rem;
+  }
+}
+// SLIDER
+.mdc-slider {
+  --mdc-slider-inactive-track-height: 0.2rem;
+  --mdc-slider-handle-width: 1.2rem;
+  --mdc-slider-handle-height: 1.2rem;
+  &.mat-mdc-slider .mdc-slider__track--active {
+    --mdc-slider-active-track-height: 0.2rem;
+  }
+}
+// FAB
+.mat-mdc-fab {
+  &:not(.mdc-fab--extended) {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  &.mat-mdc-extended-fab {
+    height: 3.2rem;
+  }
+}
+.mdc-fab--mini {
+  width: 3.6rem !important;
+  height: 3.6rem !important;
+}
+
+// CHECKBOX
+.mdc-checkbox {
+  @include mat.checkbox-density(-3);
+  --mdc-checkbox-state-layer-size: 38px;
+  padding: 10px !important;
+  .mdc-checkbox__background {
+    @include icon-size(16px, " ");
+  }
+}
+
+// DATA TABLE
+.mat-mdc-table {
+  &.mat-mdc-table .mdc-data-table__header-row {
+    height: 36px;
+  }
+  &.mat-mdc-table .mdc-data-table__row {
+    height: 32px;
+  }
+}
+
+// RADIO BUTTON
+.mdc-radio {
+  --mdc-radio-state-layer-size: 38px;
+  &.mdc-radio__background {
+    &.mdc-radio__inner-circle {
+      @include mat.radio-density(-3);
     }
   }
-  .mat-button-toggle > .mat-icon {
-    @include icon-size(1.285714285714286rem, 1.285714285714286rem);
+  .mat-mdc-radio-touch-target {
+    @include icon-size(38px, null);
   }
-  &.mat-mdc-chip .mat-icon {
-    @include icon-size(1.714285714285714rem, 1.714285714285714rem);
+  // ICON BUTTON
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    @include icon-size(2.285714285714286rem, null);
+    padding: 0.4285714285714286rem;
+    & > .mat-icon {
+      @include icon-size(1.428571428571429rem, 1.285714285714286rem);
+    }
   }
-  // BUTTON TOGGLE
-  &.mat-mdc-button-base > .mat-icon {
-    @include icon-size(1.285714285714286rem, 1.285714285714286rem);
-  }
-  // ICON
   &.mat-icon {
-    @include icon-size(
-      1.714285714285714rem !important,
-      1.714285714285714rem!important
-    );
-  }
-  // FAB
-  &.mat-mdc-extended-fab {
-    height: 3.571428571428571rem;
-  }
-  &.mdc-fab:not(.mdc-fab--extended) {
-    width: 4rem;
-    height: 4rem;
+    @include icon-size(1.428571428571429rem, 1.285714285714286rem);
   }
 }
