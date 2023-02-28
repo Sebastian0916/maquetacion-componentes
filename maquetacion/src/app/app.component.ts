@@ -6,6 +6,12 @@ export interface PeriodicElement {
   symbol: string;
 }
 
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
+
 const ELEMENT_DATA: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
   { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
