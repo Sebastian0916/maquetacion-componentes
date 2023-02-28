@@ -3,8 +3,8 @@
 @use "@material/button";
 // @use "@material/chips";
 @import "./mixins";
-
 @include mat.core();
+
 // Eliminacion hint elemento de form field componente
 [class*="mat-mdc-form-field-subscript-wrapper"] {
   &:not(:has(:only-child mat-hint)) {
@@ -15,28 +15,47 @@
 // Conversion de REM to PX, 1rem = 10px
 
 // Componentes con pseudo-clase  :not()
-// Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
+// Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, FORM FIELD )
 :not(.medium) {
   &.mat-mdc-chip,
   &.mat-md-chip-option {
     &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
-     @include icon-size(1.6rem, null);
+      @include icon-size(1.6rem, null);
     }
-    &.mat-icon {
-      @include icon-size(1.428571428571429rem, 1.285714285714286rem);
+    .mat-mdc-chip-remove .mat-icon {
+      @include icon-size(2.2rem !important, 2rem !important);
     }
+  }
+  .mat-mdc-form-field {
+    &:not(.mat-form-field-appearance-fill) {
+      @include mat.form-field-density(-6);
+      & .mat-mdc-form-field-infix {
+        display: flex;
+      }
+    }
+    &:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-4.5);
+      .mat-mdc-form-field-infix {
+        padding-bottom: 0px !important;
+      }
+    }
+    &.standard:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-5.25);
+      .mat-mdc-form-field-infix {
+        padding-bottom: 0px !important;
+      }
+    }
+    & .mat-icon {
+      @include icon-size(16px!important, 16px!important);
+      padding: 0px 12px !important;
+    }
+    & input,
+    .mat-mdc-select {
+      place-self: center;
+    }
+    @include mat.icon-button-density(-4);
   }
 }
-//TEXTFIELD STANDARD
-.mat-mdc-form-field {
-  &:not(.mat-form-field-appearance-fill) {
-    @include mat.form-field-density(-1);
-  }
-  &:not(.mat-form-field-appearance-outline) {
-    @include mat.form-field-density(-1);
-  }
-}
-
 // BUTTON
 .mdc-button {
   &:not(.large, .small) {
@@ -48,7 +67,6 @@
     }
   }
 }
-
 //PROGRES SPINER
 .mat-mdc-progress-spinner {
   width: 4rem !important;
@@ -64,7 +82,6 @@
 .mat-button-toggle-group {
   @include mat.button-toggle-density(-6);
 }
-
 // EXPANSION PANEL
 .mat-expansion-panel {
   .mat-expansion-panel-header.mat-expanded {
@@ -78,7 +95,6 @@
     height: 1.6rem;
   }
 }
-
 // LIST with icon
 .mdc-list {
   @include mat.icon-button-density(-3);
@@ -93,7 +109,6 @@
     @include icon-size(3.6rem, null);
   }
 }
-
 // SUFFIX
 .mat-mdc-form-field-icon-suffix > .mat-icon {
   padding: 0.5714285714285714rem;
@@ -122,21 +137,23 @@
   &.mat-mdc-extended-fab {
     height: 3.2rem;
   }
-  .material-icons, .mat-icon{
-    @include icon-size(18px , 16px );
+  .material-icons,
+  .mat-icon {
+    @include icon-size(18px, 16px);
   }
 }
 // EXTEND FAB
 .mat-mdc-extended-fab > .mat-icon,
 .mat-mdc-extended-fab > .material-icons {
-  @include icon-size(18px , 16px );
+  @include icon-size(18px, 16px);
 }
 // MINI FAB
 .mdc-fab--mini {
   width: 3.6rem !important;
   height: 3.6rem !important;
-  .material-icons, .mat-icon{
-    @include icon-size(18px , 16px );
+  .material-icons,
+  .mat-icon {
+    @include icon-size(18px, 16px);
   }
 }
 // CHECKBOX
@@ -148,7 +165,6 @@
     @include icon-size(16px, " ");
   }
 }
-
 // DATA TABLE
 .mat-mdc-table {
   &.mat-mdc-table .mdc-data-table__header-row {
@@ -158,7 +174,6 @@
     height: 32px;
   }
 }
-
 // RADIO BUTTON
 .mdc-radio {
   --mdc-radio-state-layer-size: 38px;
@@ -182,3 +197,145 @@
     @include icon-size(1.428571428571429rem, 1.285714285714286rem);
   }
 }
+/// MEDIUM CONFIGURATION
+
+  .medium {
+    //////////////// MEDIUM ////////////////
+    .mat-mdc-menu-item.mdc-list-item {
+      min-height: 4.4rem !important;
+    }
+    // CHECKBOX
+    &.mat-mdc-checkbox .mdc-checkbox {
+      padding: calc(
+        (var(--mdc-checkbox-state-layer-size, 4.2rem) - 1.8rem) / 2
+      ) !important;
+    }
+    .mdc-checkbox__background {
+      margin: 0.1rem;
+    }
+    // Componentes con pseudo-clase  :not()
+    // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
+    &.mat-mdc-chip,
+    &.mat-md-chip-option {
+      &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
+        width: 2rem;
+        height: 2rem;
+      }
+      &.mat-mdc-standard-chip .mdc-evolution-chip__icon--trailing {
+        @include icon-size(2.4rem !important, null);
+      }
+      .mat-mdc-chip-remove .mat-icon {
+        @include icon-size(2.2rem !important, 2rem !important);
+      }
+    }
+  // //FORM FIELD
+  &.mat-mdc-form-field {
+    &:not(.mat-form-field-appearance-fill) {
+      @include mat.form-field-density(-1);
+      & .mat-mdc-form-field-infix {
+        display: flex;
+      }
+    }
+    &:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-2.5);
+    }
+    &.standard:not(.mat-form-field-appearance-outline) {
+      @include mat.form-field-density(-4.5);
+    }
+  }
+    
+    // BUTTON
+    &.mdc-button {
+      &:not(.large, .small) {
+        &.mdc-button {
+          @include button.density(-1);
+        }
+      }
+    }
+    //PROGRES SPINER
+    /// LIST with icon
+    @include mat.list-density(-1);
+    span.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+      display: flex;
+      align-items: center;
+    }
+    // ICON
+    .mat-icon {
+      @include icon-size(2rem !important, 1.8rem !important);
+    }
+    //BUTTON TOGGLE
+    @include mat.button-toggle-density(-3);
+    // ICON BUTTON
+    @include mat.icon-button-density(-1);
+    &.mat-mdc-icon-button.mat-mdc-button-base {
+      @include icon-size(4.4rem, null);
+      padding: 1.1rem;
+      & > .mat-icon {
+        @include icon-size(2rem, 1.8rem);
+      }
+    }
+    &.mat-icon {
+      @include icon-size(2rem, 1.8rem);
+    }
+    // TAB
+    .mat-mdc-tab.mdc-tab {
+      height: 2.857142857142857rem;
+    }
+    // SLIDER
+    .mat-mdc-slider
+      .mdc-slider__track--inactive
+      .mat-mdc-slider
+      .mdc-slider__track {
+      --mdc-slider-inactive-track-height: 0.2857142857142857rem;
+    }
+    .mat-mdc-slider .mdc-slider__track--active {
+      --mdc-slider-inactive-track-height: 0.4285714285714286rem;
+    }
+    // FAB
+    &.mat-mdc-extended-fab {
+      height: 3.8rem !important;
+      & > .mat-icon {
+        @include icon-size(2.2rem !important, 2rem !important);
+      }
+    }
+    &.mdc-fab:not(.mdc-fab--extended) {
+      & > .mat-icon {
+        @include icon-size(2.4rem !important, 2.2rem !important);
+      }
+    }
+  }
+  //////////////// LARGE ////////////////
+  .large {
+    // Componentes con pseudo-clase  :not()
+    // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, TEXTFIELD )
+    &:not(.small) {
+      &.mdc-button {
+        @include button.density(0);
+      }
+    }
+    .mat-button-toggle > .mat-icon {
+      @include icon-size(1.285714285714286rem, 1.285714285714286rem);
+    }
+    &.mat-mdc-chip .mat-icon {
+      @include icon-size(1.714285714285714rem, 1.714285714285714rem);
+    }
+    // BUTTON TOGGLE
+    &.mat-mdc-button-base > .mat-icon {
+      @include icon-size(1.285714285714286rem, 1.285714285714286rem);
+    }
+    // ICON
+    &.mat-icon {
+      @include icon-size(
+        1.714285714285714rem !important,
+        1.714285714285714rem!important
+      );
+    }
+    // FAB
+    &.mat-mdc-extended-fab {
+      height: 3.571428571428571rem;
+    }
+    &.mdc-fab:not(.mdc-fab--extended) {
+      width: 4rem;
+      height: 4rem;
+    }
+  }

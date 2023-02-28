@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "@material/textfield" with($minimum-height-for-filled-label:32px, $minimum-height:32px);
 @use "@angular/material" as mat;
 @use "./mixins.scss" as variants;
 @import "./typography";
