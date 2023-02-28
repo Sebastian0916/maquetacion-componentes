@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 export interface PeriodicElement {
   name: string;
@@ -6,6 +7,12 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -31,5 +38,14 @@ export class AppComponent {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'},
+  ];
+
+  myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
 
 }

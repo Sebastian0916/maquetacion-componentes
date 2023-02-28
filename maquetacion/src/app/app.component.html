@@ -1,3 +1,201 @@
+
+<div class="mat-elevation-z2 t-f-s"  style="display: flex; align-items: flex-start; justify-content: center; row-gap: 6px; column-gap: 12px; margin: 3rem auto; padding: 1rem; width: 40%; flex-wrap: wrap;">
+
+  <mat-form-field appearance="fill" size="medium">
+    <mat-label>Form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" size="medium">
+    <mat-label> Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label> Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width" appearance="fill" size="medium">
+    <mat-label>Autocomplete</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControl="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill" >
+    <mat-label>Autocomplete</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControl="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" size="medium">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="fill" >
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  
+  <mat-form-field appearance="outline"  size="medium">
+    <mat-label>Form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" >
+    <mat-label>Form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline"  size="medium">
+    <mat-label> Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline" >
+    <mat-label> Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  
+
+  <mat-form-field class="example-full-width" appearance="outline"  size="medium">
+    <mat-label>Autocomplete</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControl="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline"  >
+    <mat-label>Autocomplete</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControl="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field standard  size="medium">
+    <mat-label>Form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <mat-form-field standard  >
+    <mat-label>Form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>hint</mat-hint>
+  </mat-form-field>
+   
+  <mat-form-field standard  size="medium">
+    <mat-label> Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field standard >
+    <mat-label> Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+    <mat-hint>hint</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" standard size="medium" >
+    <mat-label>Autocomplete</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControl="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" standard  >
+    <mat-label>Autocomplete</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControl="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-hint>hint</mat-hint>
+  </mat-form-field>
+
+  
+</div>  
+
+
+
 <div class="d-flex a-center s-evenly column p-base full-view">
   <!-- MAT RADIO GROUP -->
   <div class="d-flex clomun a-center">
@@ -11,9 +209,9 @@
     <h4>Buttons</h4>
   </div>
   <div class="d-flex a-center s-evenley">
-    <button mat-raised-button color="primary">Small</button>
+    <button mat-raised-button color="primary">medium</button>
     <button mat-raised-button color="primary">
-      Small<mat-icon>add</mat-icon>
+      medium<mat-icon>add</mat-icon>
     </button>
   </div>
 
@@ -41,7 +239,7 @@
 
   <!-- LISTAS CON ICONOS -->
   <div class="d-flex a-center j-center">
-    <mat-list role="list" size="small" ap>
+    <mat-list role="list" size="medium" ap>
       <mat-list-item role="listitem">
         <p>Hello world</p>
         <button mat-icon-button matListItemMeta>
@@ -109,7 +307,7 @@
   <!-- ICON BUTTON -->
   <div class="d-flex a-center s-evenly m-base column">
     <h4>Icon buttons</h4>
-    <button mat-icon-button color="primary" size="small">
+    <button mat-icon-button color="primary" size="medium">
       <mat-icon>add</mat-icon>
     </button>
     <button mat-icon-button color="accent">

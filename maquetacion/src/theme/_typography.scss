@@ -74,17 +74,17 @@ $typography-global-config: map.merge(
       mat.define-typography-level(
         $font-family: Roboto,
         $font-weight: 400,
-        $font-size: 1.3rem,
-        $line-height: 1.34,
-        $letter-spacing: 0.01071em,
+        $font-size: 1.4rem,
+        $line-height: 1.43,
+        $letter-spacing: 0.00938em,
       ),
     $body-2:
       mat.define-typography-level(
         $font-family: Roboto,
         $font-weight: 400,
-        $font-size: 1.4rem,
-        $line-height: 1.43,
-        $letter-spacing: 0.00938em,
+        $font-size: 1.3rem,
+        $line-height: 1.34,
+        $letter-spacing: 0.01071em,
       ),
     $button:
       mat.define-typography-level(

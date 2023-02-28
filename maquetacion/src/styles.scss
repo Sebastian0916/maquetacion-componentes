@@ -6,7 +6,6 @@
 @use "@material/list/_variables.scss" with (
   $deprecated-single-line-maximum-height: 56px
 );
-@use "@material/textfield" with($minimum-height-for-filled-label: 36px);
 @use "@material/radio" with (
   $minimum-size: 16px,
   $ripple-size: 50px,
