@@ -2,14 +2,10 @@
   $size: 30px,
   $minimum-height: 10px,
   $icon-size: 24px
-  );
-  @use "@material/list/_variables.scss" with (
-    $deprecated-single-line-maximum-height: 56px
-  );
-// @use "@material/chips/chip-themes.scss" with (
-//   $minimum-height: 20px,
-//   $height: 32px
-// );
+);
+@use "@material/list/_variables.scss" with (
+  $deprecated-single-line-maximum-height: 56px
+);
 @use "@material/textfield" with($minimum-height-for-filled-label: 36px);
 @use "@material/radio" with (
   $minimum-size: 16px,
@@ -17,8 +13,9 @@
   $icon-size: 17px
 );
 @use "@material/checkbox/_checkbox-theme.scss" with($icon-size: 14px);
-@use "@material/data-table" with($row-height: 56px, $minimum-row-height: 28px);
-// @use "@material/data-table/_data-table-theme.scss" with($row-height:32px, $minimum-row-height: 0);
+// @use "@material/data-table" with($row-height: 56px, $minimum-row-height: 28px);
+@use "@material/data-table/_data-table-theme.scss"
+  with($row-height: 32px, $minimum-row-height: 0);
 @use "@material/button/_button-shared-theme.scss" with (
   $height: 42px,
   $minimum-height: 26px

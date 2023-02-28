@@ -73,17 +73,28 @@ $_ripple-opacity: 0.1;
   }
 };
 
-// Conversion de REM to PX
-// 2px  ----  0.1428571428571429
-// 10px ----  0.7142857142857143rem
-// 16px ----  1.142857142857143rem
-// 18px ----  1.285714285714286rem
-// 20px ----  1.428571428571429rem
-// 24px ----  1.714285714285714rem
-
 // Define valores de width,height y font-size
 @mixin icon-size($tamaño, $font-size) {
   width: $tamaño;
   height: $tamaño;
   font-size: $font-size;
+} ;
+
+// MIXIN DEFINICION DE PROPIEDADES PARA DIFERENTES VARIANTES DEL COMPONENTE AVATAR
+@mixin avatarVariantes(
+  $width,
+  $height,
+  $borderRadius
+) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white ;
+  background-color: #D8DAE5 ;
+  box-shadow: none ;
+  width: $width ;
+  height: $height ;
+  border-radius: $borderRadius ;
+  font-size: 1.3rem;
+  font-weight: 400;
 } ;

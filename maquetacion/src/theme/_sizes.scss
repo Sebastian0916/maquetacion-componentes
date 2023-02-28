@@ -12,13 +12,14 @@
   }
 }
 //////////// SMALL
+///
+// Conversion de REM to PX, 1rem = 10px
 
 // Componentes con pseudo-clase  :not()
 // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
 :not(.medium) {
   &.mat-mdc-chip,
   &.mat-md-chip-option {
-    // @include mat.chips-density(-2);
     &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
       width: 1.6rem;
       height: 1.6rem;
@@ -44,7 +45,7 @@
     &.mdc-button {
       @include button.density(-2.5);
     }
-    & .mat-icon{
+    & .mat-icon {
       height: 1.333rem !important;
     }
   }
@@ -55,11 +56,6 @@
   width: 4rem !important;
   height: 4rem !important;
 }
-
-/// LIST with icon
-// .mdc-list {
-//   @include mat.list-density(-3);
-// }
 
 // ICON
 .mat-icon {
@@ -84,22 +80,19 @@
     height: 1.6rem;
   }
 }
-// ICON BUTTON
-.mat-mdc-icon-button.mat-mdc-button-base {
-  width: 4rem !important;
-  height: 4rem !important;
-  padding: 3px !important;
-};
-// LISTAS CON ICONOS
+
+// LIST with icon
 .mdc-list {
+  @include mat.icon-button-density(-3);
   @include mat.list-density(-3);
   .mat-mdc-icon-button.mat-mdc-button-base {
-    width: 3rem !important;
-    height: 3rem !important;
-    padding: 3px !important;
-  };
-  .material-icons {
-    line-height: 1.3  !important;
+    padding: 1rem;
+  }
+  .mat-icon {
+    @include icon-size(1.8rem, 1.8rem);
+  }
+  .mat-mdc-icon-button .mat-mdc-button-touch-target {
+    @include icon-size(3.6rem, null);
   }
 }
 
@@ -108,41 +101,75 @@
   padding: 0.5714285714285714rem;
 }
 // TAB
-.mat-mdc-tab.mdc-tab {
-  height: 2.857142857142857rem;
+.mat-mdc-tab-header {
+  & .mat-mdc-tab.mdc-tab {
+    height: 4rem;
+  }
 }
 // SLIDER
-.mat-mdc-slider
-  .mdc-slider__track--inactive
-  .mat-mdc-slider
-  .mdc-slider__track {
-  --mdc-slider-inactive-track-height: 0.2857142857142857rem;
+.mdc-slider {
+  --mdc-slider-inactive-track-height: 0.2rem;
+  --mdc-slider-handle-width: 1.2rem;
+  --mdc-slider-handle-height: 1.2rem;
+  &.mat-mdc-slider .mdc-slider__track--active {
+    --mdc-slider-active-track-height: 0.2rem;
+  }
 }
-.mat-mdc-slider .mdc-slider__track--active {
-  --mdc-slider-inactive-track-height: 0.4285714285714286rem;
-}
-
 // FAB
-.mat-mdc-extended-fab {
-  height: 2.857142857142857rem;
+.mat-mdc-fab {
+  &:not(.mdc-fab--extended) {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  &.mat-mdc-extended-fab {
+    height: 3.2rem;
+  }
 }
-.mdc-fab:not(.mdc-fab--extended) {
-  width: 3.428571428571429rem;
-  height: 3.428571428571429rem;
+.mdc-fab--mini {
+  width: 3.6rem !important;
+  height: 3.6rem !important;
 }
 
 // CHECKBOX
-// @include mat.checkbox-density(-3);
-// &.mat-mdc-checkbox .mdc-checkbox {
-//   padding: calc(
-//     (
-//         var(--mdc-checkbox-state-layer-size, 2.214285714285714rem) -
-//           1.285714285714286rem
-//       ) / 2
-//   ) !important;
-// }
-// .mdc-checkbox__background {
-//   width: 1.07142857rem;
-//   height: 1.07142857rem;
-//   margin: -0.2142857142857143rem;
-// }
+.mdc-checkbox {
+  @include mat.checkbox-density(-3);
+  --mdc-checkbox-state-layer-size: 38px;
+  padding: 10px !important;
+  .mdc-checkbox__background {
+    @include icon-size(16px, " ");
+  }
+}
+
+// DATA TABLE
+.mat-mdc-table {
+  &.mat-mdc-table .mdc-data-table__header-row {
+    height: 36px;
+  }
+  &.mat-mdc-table .mdc-data-table__row {
+    height: 32px;
+  }
+}
+
+// RADIO BUTTON
+.mdc-radio {
+  --mdc-radio-state-layer-size: 38px;
+  &.mdc-radio__background {
+    &.mdc-radio__inner-circle {
+      @include mat.radio-density(-3);
+    }
+  }
+  .mat-mdc-radio-touch-target {
+    @include icon-size(38px, null);
+  }
+  // ICON BUTTON
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    @include icon-size(2.285714285714286rem, null);
+    padding: 0.4285714285714286rem;
+    & > .mat-icon {
+      @include icon-size(1.428571428571429rem, 1.285714285714286rem);
+    }
+  }
+  &.mat-icon {
+    @include icon-size(1.428571428571429rem, 1.285714285714286rem);
+  }
+}
