@@ -25,8 +25,10 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const components = [
+  MatExpansionModule,
   MatTableModule,
   MatListModule,
   MatButtonToggleModule,
