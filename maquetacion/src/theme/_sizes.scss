@@ -58,12 +58,12 @@
 }
 // BUTTON
 .mdc-button {
-  &:not(.large, .small) {
+  &:not(.large, .medium) {
     &.mdc-button {
       @include button.density(-2.5);
     }
-    & .mat-icon {
-      height: 1.333rem !important;
+    & > .mat-icon {
+      @include icon-size(1.6rem, 1.4rem);
     }
   }
 }
@@ -74,13 +74,13 @@
 }
 
 // // ICON
-// .mat-icon {
-//   @include icon-size(1.6rem !important, 1.3rem !important);
-// }
+.mat-icon {
+  @include icon-size(1.6rem !important, 1.4rem !important);
+}
 
 //BUTTON TOGGLE
 .mat-button-toggle-group {
-  @include mat.button-toggle-density(-6);
+  @include mat.button-toggle-density(-2);
 }
 // EXPANSION PANEL
 .mat-expansion-panel {
@@ -130,6 +130,10 @@
 }
 // FAB
 .mat-mdc-fab {
+  & span.mat-mdc-button-touch-target {
+    height: 3.6rem !important ;
+    width: 3.6rem !important;
+  }
   &:not(.mdc-fab--extended) {
     width: 3.6rem;
     height: 3.6rem;
@@ -137,9 +141,8 @@
   &.mat-mdc-extended-fab {
     height: 3.2rem;
   }
-  .material-icons,
   .mat-icon {
-    @include icon-size(18px, 16px);
+    @include icon-size(2rem, 1.8rem);
   }
 }
 // EXTEND FAB
@@ -176,58 +179,57 @@
 }
 // RADIO BUTTON
 .mdc-radio {
-  --mdc-radio-state-layer-size: 38px;
+  --mdc-radio-state-layer-size: 3.8rem;
   &.mdc-radio__background {
     &.mdc-radio__inner-circle {
       @include mat.radio-density(-3);
     }
   }
   .mat-mdc-radio-touch-target {
-    @include icon-size(38px, null);
+    @include icon-size(3.8rem, null);
   }
-  // ICON BUTTON
-  .mat-mdc-icon-button.mat-mdc-button-base {
-    @include icon-size(2.285714285714286rem, null);
-    padding: 0.4285714285714286rem;
-    & > .mat-icon {
-      @include icon-size(1.428571428571429rem, 1.285714285714286rem);
-    }
-  }
-  &.mat-icon {
-    @include icon-size(1.428571428571429rem, 1.285714285714286rem);
+}
+// ICON BUTTON
+.mat-mdc-icon-button.mat-mdc-button-base {
+  @include icon-size(3.2rem !important, null);
+  padding: 0.4rem !important;
+  & > .mat-icon {
+    @include icon-size(1.6rem !important, 1.4rem !important);
   }
 }
 /// MEDIUM CONFIGURATION
 
-  .medium {
-    //////////////// MEDIUM ////////////////
-    .mat-mdc-menu-item.mdc-list-item {
-      min-height: 4.4rem !important;
+.medium {
+  //////////////// MEDIUM ////////////////
+  //TOGGLE BUTTON
+
+  .mat-mdc-menu-item.mdc-list-item {
+    min-height: 4.4rem !important;
+  }
+  // CHECKBOX
+  &.mat-mdc-checkbox .mdc-checkbox {
+    padding: calc(
+      (var(--mdc-checkbox-state-layer-size, 4.2rem) - 1.8rem) / 2
+    ) !important;
+  }
+  .mdc-checkbox__background {
+    margin: 0.1rem;
+  }
+  // Componentes con pseudo-clase  :not()
+  // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
+  &.mat-mdc-chip,
+  &.mat-md-chip-option {
+    &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
+      width: 2rem;
+      height: 2rem;
     }
-    // CHECKBOX
-    &.mat-mdc-checkbox .mdc-checkbox {
-      padding: calc(
-        (var(--mdc-checkbox-state-layer-size, 4.2rem) - 1.8rem) / 2
-      ) !important;
+    &.mat-mdc-standard-chip .mdc-evolution-chip__icon--trailing {
+      @include icon-size(2.4rem !important, null);
     }
-    .mdc-checkbox__background {
-      margin: 0.1rem;
+    .mat-mdc-chip-remove .mat-icon {
+      @include icon-size(2.2rem !important, 2rem !important);
     }
-    // Componentes con pseudo-clase  :not()
-    // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION )
-    &.mat-mdc-chip,
-    &.mat-md-chip-option {
-      &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
-        width: 2rem;
-        height: 2rem;
-      }
-      &.mat-mdc-standard-chip .mdc-evolution-chip__icon--trailing {
-        @include icon-size(2.4rem !important, null);
-      }
-      .mat-mdc-chip-remove .mat-icon {
-        @include icon-size(2.2rem !important, 2rem !important);
-      }
-    }
+  }
   // //FORM FIELD
   &.mat-mdc-form-field {
     &:not(.mat-form-field-appearance-fill) {
@@ -243,99 +245,122 @@
       @include mat.form-field-density(-4.5);
     }
   }
-    
-    // BUTTON
-    &.mdc-button {
-      &:not(.large, .small) {
-        &.mdc-button {
-          @include button.density(-1);
-        }
+
+  // BUTTON
+  &.mdc-button {
+    &:not(.large, .small) {
+      &.mdc-button {
+        @include button.density(-1);
       }
     }
-    //PROGRES SPINER
-    /// LIST with icon
-    @include mat.list-density(-1);
-    span.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
-      display: flex;
-      align-items: center;
-    }
-    // ICON
-    .mat-icon {
+  }
+  //PROGRES SPINER
+  /// LIST with icon
+  @include mat.list-density(-1);
+  span.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+    display: flex;
+    align-items: center;
+  }
+  // ICON
+  .mat-icon {
+    @include icon-size(2rem !important, 1.8rem !important);
+  }
+  //BUTTON TOGGLE
+  @include mat.button-toggle-density(0);
+  // ICON BUTTON
+  &.mat-mdc-icon-button.mat-mdc-button-base {
+    @include icon-size(4.4rem !important, null);
+    padding: 1.1rem !important;
+    & > .mat-icon {
       @include icon-size(2rem !important, 1.8rem !important);
     }
-    //BUTTON TOGGLE
-    @include mat.button-toggle-density(-3);
-    // ICON BUTTON
-    @include mat.icon-button-density(-1);
-    &.mat-mdc-icon-button.mat-mdc-button-base {
-      @include icon-size(4.4rem, null);
-      padding: 1.1rem;
-      & > .mat-icon {
-        @include icon-size(2rem, 1.8rem);
-      }
-    }
-    &.mat-icon {
-      @include icon-size(2rem, 1.8rem);
-    }
-    // TAB
-    .mat-mdc-tab.mdc-tab {
-      height: 2.857142857142857rem;
-    }
-    // SLIDER
+  }
+  &.mat-icon {
+    @include icon-size(2rem, 1.8rem);
+  }
+  // TAB
+  .mat-mdc-tab.mdc-tab {
+    height: 2.857142857142857rem;
+  }
+  // SLIDER
+  .mat-mdc-slider
+    .mdc-slider__track--inactive
     .mat-mdc-slider
-      .mdc-slider__track--inactive
-      .mat-mdc-slider
-      .mdc-slider__track {
-      --mdc-slider-inactive-track-height: 0.2857142857142857rem;
+    .mdc-slider__track {
+    --mdc-slider-inactive-track-height: 0.2857142857142857rem;
+  }
+  .mat-mdc-slider .mdc-slider__track--active {
+    --mdc-slider-inactive-track-height: 0.4285714285714286rem;
+  }
+  // FAB
+  &.mat-mdc-fab {
+    & span.mat-mdc-button-touch-target:not(.mdc-fab--extended),
+    &:not(.mdc-fab--extended) {
+      height: 4.8rem !important ;
+      width: 4.8rem !important;
     }
-    .mat-mdc-slider .mdc-slider__track--active {
-      --mdc-slider-inactive-track-height: 0.4285714285714286rem;
-    }
-    // FAB
     &.mat-mdc-extended-fab {
-      height: 3.8rem !important;
-      & > .mat-icon {
-        @include icon-size(2.2rem !important, 2rem !important);
-      }
+      height: 3.8rem;
     }
-    &.mdc-fab:not(.mdc-fab--extended) {
-      & > .mat-icon {
+    .mat-icon {
+      @include icon-size(2.4rem, 2.2rem);
+    }
+  }
+  //ICON
+  &.mat-icon {
+    @include icon-size(2rem !important, 1.8rem !important);
+  }
+}
+//////////////// LARGE ////////////////
+.large {
+  // Componentes con pseudo-clase  :not()    // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, TEXTFIELD )    //BUTTON
+  &:not(.medium) {
+    &.mdc-button {
+      @include button.density(0);
+      $button-large-typography: mat.define-typography-config(
+        $button: mat.define-typography-level(1.4rem, 23px, 500),
+      );
+      @include mat.typography-level($button-large-typography, "button");
+      & .mat-icon {
         @include icon-size(2.4rem !important, 2.2rem !important);
       }
     }
   }
-  //////////////// LARGE ////////////////
-  .large {
-    // Componentes con pseudo-clase  :not()
-    // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, TEXTFIELD )
-    &:not(.small) {
-      &.mdc-button {
-        @include button.density(0);
-      }
+  // FAB
+  &.mat-mdc-fab {
+    & span.mat-mdc-button-touch-target:not(.mdc-fab--extended),
+    &:not(.mdc-fab--extended) {
+      height: 5.6rem !important ;
+      width: 5.6rem !important;
     }
-    .mat-button-toggle > .mat-icon {
-      @include icon-size(1.285714285714286rem, 1.285714285714286rem);
-    }
-    &.mat-mdc-chip .mat-icon {
-      @include icon-size(1.714285714285714rem, 1.714285714285714rem);
-    }
-    // BUTTON TOGGLE
-    &.mat-mdc-button-base > .mat-icon {
-      @include icon-size(1.285714285714286rem, 1.285714285714286rem);
-    }
-    // ICON
-    &.mat-icon {
-      @include icon-size(
-        1.714285714285714rem !important,
-        1.714285714285714rem!important
-      );
-    }
-    // FAB
     &.mat-mdc-extended-fab {
-      height: 3.571428571428571rem;
+      height: 4.8rem !important;
     }
-    &.mdc-fab:not(.mdc-fab--extended) {
-      width: 4rem;
-      height: 4rem;
+    .mat-icon {
+      @include icon-size(2.4rem !important, 2.2rem !important);
     }
   }
+  // ICON BUTTON
+  &.mat-mdc-icon-button.mat-mdc-button-base {
+    @include icon-size(5.8rem !important, null);
+    padding: 1.4rem 1.2rem !important;
+    & > .mat-icon {
+      @include icon-size(3.5rem !important, 3rem !important);
+    }
+  }
+  //BUTTON-TOGLE
+  &.mat-button-toggle-group {
+    & .mat-button-toggle {
+      &-label-content {
+        line-height: calc(24px + 32px);
+      }
+      & .mat-icon {
+        @include icon-size(2.4rem !important, 2.2rem !important);
+      }
+    }
+  }
+  // ICON
+  &.mat-icon {
+    @include icon-size(3.5rem !important, 3rem!important);
+  }
+}
