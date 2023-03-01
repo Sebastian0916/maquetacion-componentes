@@ -100,7 +100,7 @@
   @include mat.icon-button-density(-3);
   @include mat.list-density(-3);
   .mat-mdc-icon-button.mat-mdc-button-base {
-    padding: 1rem;
+    padding: 0.8rem !important;
   }
   .mat-icon {
     @include icon-size(1.8rem, 1.8rem);
@@ -128,11 +128,15 @@
     --mdc-slider-active-track-height: 0.2rem;
   }
 }
+.mat-mdc-slider-visual-thumb .mat-ripple {
+  @include icon-size(3.2rem !important, null);
+  margin: 0.8rem;
+  border-radius: 1.6rem;
+}
 // FAB
 .mat-mdc-fab {
   & span.mat-mdc-button-touch-target {
-    height: 3.6rem !important ;
-    width: 3.6rem !important;
+    @include icon-size(3.6rem !important, null);
   }
   &:not(.mdc-fab--extended) {
     width: 3.6rem;
@@ -283,14 +287,14 @@
     height: 2.857142857142857rem;
   }
   // SLIDER
-  .mat-mdc-slider
-    .mdc-slider__track--inactive
-    .mat-mdc-slider
-    .mdc-slider__track {
-    --mdc-slider-inactive-track-height: 0.2857142857142857rem;
-  }
-  .mat-mdc-slider .mdc-slider__track--active {
-    --mdc-slider-inactive-track-height: 0.4285714285714286rem;
+  &.mat-mdc-slider,
+  .mdc-slider__track--inactive,
+  .mat-mdc-slider,
+  .mdc-slider__track {
+    --mdc-slider-inactive-track-height: 0.4rem !important;
+    &.mat-mdc-slider .mdc-slider__track--active {
+      --mdc-slider-active-track-height: 0.6rem !important;
+    }
   }
   // FAB
   &.mat-mdc-fab {
@@ -330,8 +334,7 @@
   &.mat-mdc-fab {
     & span.mat-mdc-button-touch-target:not(.mdc-fab--extended),
     &:not(.mdc-fab--extended) {
-      height: 5.6rem !important ;
-      width: 5.6rem !important;
+      @include icon-size(5.6rem !important, null);
     }
     &.mat-mdc-extended-fab {
       height: 4.8rem !important;
