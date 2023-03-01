@@ -3,28 +3,28 @@
 $h3: mat.define-typography-level(
   $font-size: 2.8rem,
   $font-weight: 500,
-  $line-height: 1.167,
+  $line-height: 1.2,
   $letter-spacing: 0em !important,
   $font-family: Nunito !important,
 );
 $h4: mat.define-typography-level(
   $font-weight: 600,
   $font-size: 2rem,
-  $line-height: 1.235,
+  $line-height: 1,
   $letter-spacing: 0.00735em !important,
   $font-family: Nunito !important,
 );
 $h5: mat.define-typography-level(
   $font-weight: 600,
   $font-size: 1.8rem,
-  $line-height: 1.26,
+  $line-height: 1.6,
   $letter-spacing: 0em !important,
   $font-family: Nunito !important,
 );
 $h6: mat.define-typography-level(
   $font-weight: 600,
   $font-size: 1.6rem,
-  $line-height: 1.6,
+  $line-height: 1.4,
   $letter-spacing: 0.0075em !important,
   $font-family: Nunito !important,
 );
@@ -32,7 +32,7 @@ $overline: mat.define-typography-level(
   $font-family: Roboto,
   $font-weight: 400,
   $font-size: 1.1rem,
-  $line-height: 2.4,
+  $line-height: 2.66,
   $letter-spacing: 0.071em,
 );
 $typography-global-config: map.merge(
@@ -43,7 +43,7 @@ $typography-global-config: map.merge(
         $font-family: Nunito,
         $font-weight: 300,
         $font-size: 4rem,
-        $line-height: 1.167,
+        $line-height: 1.4,
         $letter-spacing: -0.01562em,
       ),
     $headline-6:
@@ -59,7 +59,7 @@ $typography-global-config: map.merge(
         $font-family: Roboto,
         $font-weight: 500,
         $font-size: 1.4rem,
-        $line-height: 1.43,
+        $line-height: 1.4,
         $letter-spacing: 0.00938em,
       ),
     $subtitle-2:
@@ -67,7 +67,7 @@ $typography-global-config: map.merge(
         $font-family: Roboto,
         $font-weight: 500,
         $font-size: 1.3rem,
-        $line-height: 1.57,
+        $line-height: 1.4,
         $letter-spacing: 0.00714em,
       ),
     $body-1:
@@ -75,7 +75,7 @@ $typography-global-config: map.merge(
         $font-family: Roboto,
         $font-weight: 400,
         $font-size: 1.4rem,
-        $line-height: 1.43,
+        $line-height: 1.4,
         $letter-spacing: 0.00938em,
       ),
     $body-2:
@@ -83,7 +83,7 @@ $typography-global-config: map.merge(
         $font-family: Roboto,
         $font-weight: 400,
         $font-size: 1.3rem,
-        $line-height: 1.34,
+        $line-height: 1.2,
         $letter-spacing: 0.01071em,
       ),
     $button:
@@ -91,7 +91,7 @@ $typography-global-config: map.merge(
         $font-family: Roboto,
         $font-weight: 500,
         $font-size: 1.27rem,
-        $line-height: 1.75,
+        $line-height: 1.49130074565,
         $letter-spacing: 0.02857em,
       ),
     $caption:
