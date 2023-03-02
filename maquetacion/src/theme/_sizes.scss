@@ -194,7 +194,8 @@
   }
 }
 // ICON BUTTON
-.mat-mdc-icon-button.mat-mdc-button-base {
+.mat-mdc-icon-button.mat-mdc-button-base,
+.mat-mdc-button-touch-target {
   @include icon-size(3.2rem !important, null);
   padding: 0.4rem !important;
   & > .mat-icon {
