@@ -41,9 +41,27 @@
   justify-content: center;
   flex-direction: column;
 }
-.mat-toolbar {
-  width: 35% !important;
-}
+
 .example-spacer {
   flex: 1 1 auto;
+}
+
+
+.container-elevations {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-block: 3rem;
+}
+.elevation-example {
+
+  width: 20%;
+  height: 7rem;
+  margin: 2rem;
+}
+//utilities
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
