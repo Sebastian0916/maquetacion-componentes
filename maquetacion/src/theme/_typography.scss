@@ -131,19 +131,23 @@ h6 {
   margin: 0 !important;
 }
 .mat-h3,
-h3 {
+h3,
+.mat-toolbar h3 {
   @include mat.typography-level($typography-global-config, "h3");
 }
 .mat-h4,
-h4 {
+h4,
+.mat-toolbar h4 {
   @include mat.typography-level($typography-global-config, "h4");
 }
 .mat-h5,
-h5 {
+h5,
+.mat-toolbar h5 {
   @include mat.typography-level($typography-global-config, "h5");
 }
 .mat-h6,
-h6 {
+h6,
+.mat-toolbar h6 {
   @include mat.typography-level($typography-global-config, "h6");
 }
 .mat-overline {

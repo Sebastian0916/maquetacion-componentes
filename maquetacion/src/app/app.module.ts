@@ -8,8 +8,11 @@ import { MaterialModule } from 'src/theme/material.module';
 import { SizeDirective } from 'src/theme/directivas/size.directive';
 import { StandardDirective } from '../theme/directivas/standard.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { ContenedorPVComponent } from './components/contenedor-pv/contenedor-pv.component';
+
 @NgModule({
-  declarations: [AppComponent, SizeDirective,StandardDirective],
+  declarations: [AppComponent, SizeDirective, StandardDirective, PageHeaderComponent, ContenedorPVComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
