@@ -26,6 +26,8 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule} from '@angular/material/card';
+
 
 const components = [
   MatExpansionModule,
@@ -56,7 +58,8 @@ const components = [
   MatDatepickerModule,
   MatRippleModule,
   MatNativeDateModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatCardModule
 ];
 
 @NgModule({

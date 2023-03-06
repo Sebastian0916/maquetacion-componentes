@@ -108,9 +108,9 @@ $ambient-Redesing: (
 .mat-mdc-autocomplete-panel.mdc-menu-surface {
   @include elevation(1);
 }
-.mat-mdc-card {
-  @include elevation(1);
-}
+// .mat-mdc-card {
+//   @include elevation(1);
+// }
 .mat-slide-toggle {
   @include elevation(1);
 }

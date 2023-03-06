@@ -7,7 +7,7 @@
 
 // Eliminacion hint elemento de form field componente
 [class*="mat-mdc-form-field-subscript-wrapper"] {
-  &:not(:has(:only-child mat-hint)) {
+  &:not(:has(:only-child mat-hint, mat-error)) {
     display: none;
   }
 }
@@ -80,7 +80,7 @@
 
 //BUTTON TOGGLE
 .mat-button-toggle-group {
-  @include mat.button-toggle-density(-2);
+  @include mat.button-toggle-density(-4);
 }
 // EXPANSION PANEL
 .mat-expansion-panel {
@@ -366,5 +366,11 @@
   // ICON
   &.mat-icon {
     @include icon-size(3.5rem !important, 3rem!important);
+  }
+}
+
+[class*="mdc-menu-surface--open"]{
+  .mat-mdc-option{
+    min-height: 2.6rem !important;
   }
 }

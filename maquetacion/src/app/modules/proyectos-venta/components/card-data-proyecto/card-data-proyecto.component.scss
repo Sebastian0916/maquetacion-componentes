@@ -1,0 +1,17 @@
+.mat-mdc-card {
+    width: 297px;
+}
+
+.cantidad{
+    border-radius: 8px;
+    &-disponibles{
+        background-color: #CEF09D;
+    }
+    &-vendidas{
+        background-color: #f09d9d;
+    }
+    &-reservadas{
+        background-color: #9dd3f0;
+
+    }
+}
