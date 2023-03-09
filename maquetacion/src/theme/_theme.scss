@@ -1,5 +1,6 @@
 @use "sass:map";
-@use "@material/textfield" with($minimum-height-for-filled-label:32px, $minimum-height:32px);
+@use "@material/textfield"
+  with($minimum-height-for-filled-label: 32px, $minimum-height: 32px);
 @use "@angular/material" as mat;
 @use "./mixins.scss" as variants;
 @import '@angular/material/theming';
@@ -7,6 +8,7 @@
 @import "./elevations";
 @import "./typography";
 @import "./sizes";
+@import "./ortientacion.scss";
 
 @include mat.core();
 
