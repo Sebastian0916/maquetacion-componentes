@@ -3,12 +3,42 @@
   with($minimum-height-for-filled-label: 32px, $minimum-height: 32px);
 @use "@angular/material" as mat;
 @use "./mixins.scss" as variants;
-@import "./typography";
+@import '@angular/material/theming';
 @import "./colors";
+@import "./elevations";
+@import "./typography";
 @import "./sizes";
 @import "./ortientacion.scss";
 
 @include mat.core();
+
+
+$light-theme-background: (
+  status-bar: map.get($grey,300),
+  app-bar:    map.get($grey,100),
+  background: map.get($grey,50),
+  card:       #fbfbfb,
+  dialog:     #fbfbfb,
+  disabled-button: rgba(16, 24, 64, 0.12),
+  selected-button:  map.get($grey,300),
+  selected-disabled-button: map_get($grey, 400),
+  disabled-button-toggle:  map.get($grey,200),
+  unselected-chip: map.get($grey,300),
+  disabled-list-option: map.get($grey,200),
+  tooltip: map.get($grey, 700),
+);
+
+$light-theme-foreground: (
+  base:              black,
+  divider:           rgba(16, 24, 64, 0.12),
+  dividers:          rgba(16, 24, 64, 0.12),
+  disabled:          rgba(16, 24, 64, 0.26),
+  disabled-button:   rgba(16, 24, 64, 0.12),
+  disabled-text:     rgba(16, 24, 64, 0.26),
+  hint-text:         map.get($grey,800),
+  secondary-text:    rgba(black, 0.54),
+
+);
 
 //LIGHT MODE COLORS
 $primary-color: mat.define-palette($primary);
@@ -36,6 +66,7 @@ $light-theme: mat.define-light-theme(
       primary: $primary-color,
       accent: $accent-color,
       warn: $warn-color,
+      
     ),
     density: 0,
   )
@@ -84,6 +115,25 @@ $light-theme-variants: (
   warning: $warning-color,
 );
 
+
+
+// @function _create-wonky-theme($primary-color, $accent-color, $warn-color,) {
+//   @return (
+//     primary: $primary-color,
+//     accent: $accent-color,
+//     warn: $warn-color,
+//     is-dark: false,
+//     foreground: $light-theme-foreground,
+//     background: $light-theme-background,
+//   );
+// }
+
+// $foregroun-background-palletes:_create-wonky-theme($primary-color,$accent-color,$warn-color);
+
+
+
 @include mat.core-theme($light-theme);
 @include mat.all-component-themes($light-theme);
 @include variants.color($light-theme, $light-theme-variants);
+
+// @include angular-material-theme($foregroun-background-palletes);

@@ -14,9 +14,9 @@ import { OrientationDirective } from 'src/theme/directivas/orientation.directive
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
   ],
   providers: [],
