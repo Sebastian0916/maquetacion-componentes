@@ -17,11 +17,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { SeleccionInmuebleComponent } from './components/seleccion-inmueble/seleccion-inmueble.component';
 
+import { OrientationDirective } from 'src/theme/directivas/orientation.directive';
 @NgModule({
   declarations: [
     AppComponent,
     SizeDirective,
-    StandardDirective,
+    StandardDirective,OrientationDirective,
     PageHeaderComponent,
     ContenedorPVComponent,
     PlanoGeneralComponentImg,
