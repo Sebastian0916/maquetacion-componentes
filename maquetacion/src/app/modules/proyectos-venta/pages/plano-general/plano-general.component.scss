@@ -1,0 +1,53 @@
+.container-img{
+    height: 100%;
+    position: fixed;
+    left: 0;
+}
+
+.container-cards{
+    right: 0;
+}
+
+
+.top-left-9{
+    top: 9%;
+    left: 9%;
+}
+
+.top-left-23X47{
+    top: 23%;
+    left: 47%;
+}
+
+.top-left-34X73{
+    top: 34%;
+    left: 73%;
+}
+.top-left-10X15{
+    top: 10%;
+    left: 15%;
+}
+
+.absolute-important{
+    position: absolute !important;
+}
+
+.margin-top-114px{
+    margin-top: 13.4rem;
+}
+
+.mat-button-toggle-group {
+    & .mat-button-toggle{
+        color: #fff;
+        border: none;
+    }
+    & .mat-button-toggle:not(.menu-button) {
+        background-color: #1E62A1;
+        
+    }
+    & .menu-button{
+        background-color: #003972;;
+    }
+}
+
+

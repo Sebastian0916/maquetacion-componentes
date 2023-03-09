@@ -8,16 +8,4 @@ import { Conjuntos } from '../../interfaces/conjuntos';
 })
 export class CardMenuContainerComponent {
   
-  listConjuntos: Conjuntos[] =[
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte I'},
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte II'},
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte III'},
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte IV'},
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte V'},
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte VI'},
-    {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte VII'},
-  ];
-
-  
-
 }

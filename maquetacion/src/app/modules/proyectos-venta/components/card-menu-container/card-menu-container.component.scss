@@ -1,16 +1,10 @@
 .mat-mdc-card {
-    background-color:  transparent;
+    background-color:  #F5F5F5;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
-.mat-button-toggle-group {
-    & .mat-button-toggle{
-        color: #fff;
-        border: none;
-    }
-    & .mat-button-toggle:not(.menu-button) {
-        background-color: #1E62A1;
-        
-    }
-    & .menu-button{
-        background-color: #003972;;
-    }
+
+.margin-left-auto{
+    margin-left: auto;
 }

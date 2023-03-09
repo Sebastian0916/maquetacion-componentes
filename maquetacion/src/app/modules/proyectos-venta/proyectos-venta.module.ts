@@ -7,6 +7,8 @@ import { MaterialModule } from 'src/theme/material.module';
 import { ComponentsModule } from "../../components/components.module";
 import { PlanoGeneralComponent } from './pages/plano-general/plano-general.component';
 import { ComponentsProyectosVentaModule } from './components/components-proyectos-venta.module';
+import { SeleccionInmueblesComponent } from './pages/seleccion-inmuebles/seleccion-inmuebles.component';
+import { Router } from '@angular/router';
 
 
 
@@ -14,6 +16,7 @@ import { ComponentsProyectosVentaModule } from './components/components-proyecto
     declarations: [
         ProyectosComponent,
         PlanoGeneralComponent,
+        SeleccionInmueblesComponent,
     ],
     imports: [
         CommonModule,
@@ -23,4 +26,7 @@ import { ComponentsProyectosVentaModule } from './components/components-proyecto
         MaterialModule
     ]
 })
-export class ProyectosVentaModule { }
+export class ProyectosVentaModule { 
+
+   
+}

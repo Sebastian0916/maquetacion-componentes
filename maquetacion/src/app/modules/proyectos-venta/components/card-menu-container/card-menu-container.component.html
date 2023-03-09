@@ -1,38 +1,11 @@
-<mat-card class="shadow-none">
+<mat-card class="shadow-none col-12  mt-17">
     <mat-card-content  class="row justify-content-between">
 
-            <button mat-fab extended color="accent">
-                <mat-icon>view_in_ar</mat-icon>
-                Ver plano
-              </button>
-    
-            <div class="d-flex align-items-center justify-content-end ">
-                <mat-form-field appearance="outline" >
-                  <mat-label>Nomenclatura</mat-label>
-                  <input matInput placeholder="Ej.AP">
-                  <mat-icon matSuffix>search</mat-icon>
-                </mat-form-field>
-          
-                <mat-form-field class="col-2" appearance="outline">
-                  <mat-label>Piso</mat-label>
-                  <mat-select >
-                    <mat-option>1</mat-option>
-                    <mat-option>2</mat-option>
-                    <mat-option>3</mat-option>
-                  </mat-select>
-                </mat-form-field>
-          
-                <mat-button-toggle-group size="medium" class="mat-elevation-z2">
-                  <mat-button-toggle >Chicala Etapa 1 - Altos de M...</mat-button-toggle>
-                  <mat-button-toggle [matMenuTriggerFor]="menu" class="menu-button">
-                    <mat-icon>arrow_drop_down</mat-icon>
-                    <mat-menu #menu="matMenu">
-                      <mat-option *ngFor="let conjunto of listConjuntos">{{conjunto.etapa}}-{{conjunto.nombre}}</mat-option>
-                    </mat-menu>
-                  </mat-button-toggle>
-                </mat-button-toggle-group>
-            
-            </div>
+      <ng-content select="[container-left]"></ng-content>
+      
+      <div class="row align-items-center justify-content-end margin-left-auto">
+          <ng-content  select="[container-right]"></ng-content> 
+      </div>
     
     </mat-card-content>
 </mat-card>

@@ -18,7 +18,6 @@ import { MaterialModule } from 'src/theme/material.module';
   imports: [
     CommonModule,
     MaterialModule,
-
   ],
   exports:[
     CardMenuContainerComponent,

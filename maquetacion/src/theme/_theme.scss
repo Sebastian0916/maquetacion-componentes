@@ -15,7 +15,7 @@ $light-theme-background: (
   status-bar: map.get($grey,300),
   app-bar:    map.get($grey,100),
   background: map.get($grey,50),
-  card:       #fbfbfb,
+  card:       #fff,
   dialog:     #fbfbfb,
   disabled-button: rgba(16, 24, 64, 0.12),
   selected-button:  map.get($grey,300),
@@ -115,18 +115,18 @@ $light-theme-variants: (
 
 
 
-// @function _create-wonky-theme($primary-color, $accent-color, $warn-color,) {
-//   @return (
-//     primary: $primary-color,
-//     accent: $accent-color,
-//     warn: $warn-color,
-//     is-dark: false,
-//     foreground: $light-theme-foreground,
-//     background: $light-theme-background,
-//   );
-// }
+@function _create-wonky-theme($primary-color, $accent-color, $warn-color,) {
+  @return (
+    primary: $primary-color,
+    accent: $accent-color,
+    warn: $warn-color,
+    is-dark: false,
+    foreground: $light-theme-foreground,
+    background: $light-theme-background,
+  );
+}
 
-// $foregroun-background-palletes:_create-wonky-theme($primary-color,$accent-color,$warn-color);
+$foregroun-background-palletes:_create-wonky-theme($primary-color,$accent-color,$warn-color);
 
 
 
@@ -134,4 +134,4 @@ $light-theme-variants: (
 @include mat.all-component-themes($light-theme);
 @include variants.color($light-theme, $light-theme-variants);
 
-// @include angular-material-theme($foregroun-background-palletes);
+@include angular-material-theme($foregroun-background-palletes);

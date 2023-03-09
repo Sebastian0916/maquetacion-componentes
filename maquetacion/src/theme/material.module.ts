@@ -27,6 +27,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule} from '@angular/material/card';
+import { MatDialogModule} from '@angular/material/dialog';
+import { OrientationDirective } from './directivas/orientation.directive';
+import { StandardDirective } from './directivas/standard.directive';
+import { SizeDirective } from './directivas/size.directive';
 
 
 const components = [
@@ -59,12 +63,22 @@ const components = [
   MatRippleModule,
   MatNativeDateModule,
   MatExpansionModule,
-  MatCardModule
+  MatCardModule,
+  MatDialogModule
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    StandardDirective,
+    OrientationDirective,
+    SizeDirective
+  ],
   imports: [components],
-  exports: [components],
+  exports: [
+    components, 
+    StandardDirective,
+    OrientationDirective,
+    SizeDirective
+  ],
 })
 export class MaterialModule {}

@@ -1,19 +1,76 @@
-<header-page>
+<header-page namePage="Plano general" route="/seleccion-inmueble">
+        <span class="mat-subtitle-1 color-text-secondary" subtitle>Proyecto: Arboleda de Chicala</span>
 </header-page>
 
-<card-menu-container></card-menu-container>
+<card-menu-container>
+        <button container-left mat-fab extended color="accent">
+        <mat-icon>view_in_ar</mat-icon>
+        Ver plano
+        </button>   
+         
 
-<div class="p-3 d-flex gap-2 justify-content-center ">
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
-    <card-data-proyecto></card-data-proyecto>
+        <mat-form-field container-right appearance="outline" >
+                <mat-label>Nomenclatura</mat-label>
+                <input matInput placeholder="Ej.AP">
+                <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        
+        <mat-form-field container-right class="col-2" appearance="outline">
+                <mat-label>Piso</mat-label>
+                <mat-select >
+                  <mat-option>1</mat-option>
+                  <mat-option>2</mat-option>
+                  <mat-option>3</mat-option>
+                </mat-select>
+        </mat-form-field>
+        
+        <mat-button-toggle-group container-right  class="mat-elevation-z2">
+                <mat-button-toggle >Chicala Etapa 1 - Altos de M...</mat-button-toggle>
+                <mat-button-toggle [matMenuTriggerFor]="menu" class="menu-button">
+                  <mat-icon>arrow_drop_down</mat-icon>
+                  <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+                    <mat-option *ngFor="let conjunto of listConjuntos">{{conjunto.etapa}}-{{conjunto.nombre}}</mat-option>
+                  </mat-menu>
+                </mat-button-toggle>
+        </mat-button-toggle-group>
+</card-menu-container>
+
+
+ <div  class="container-img col-6 margin-top-114px ml-4">
+        <img src="assets/foto_referencia.jpg" alt="foto" width="100%" height="459px">
+        <mat-radio-button class="absolute top-left-9" value="1" checked ></mat-radio-button>
+        <mat-radio-button class="absolute top-left-23X47"value="1"  ></mat-radio-button>
+        <mat-radio-button class="absolute top-left-34X73"value="1"  ></mat-radio-button>
+        <button class="col-2 absolute-important mat-subtitle-2 top-left-10X15"  mat-flat-button>Chicala 1</button>
 </div>
+    
+<div class="container-cards col-6 row justify-content-center gap-2 absolute-important margin-top-114px " >
+        <card-data-proyecto></card-data-proyecto>
+        <card-data-proyecto></card-data-proyecto>
+        <card-data-proyecto></card-data-proyecto>
+        <card-data-proyecto></card-data-proyecto>
+        
+        <card-data-proyecto></card-data-proyecto>
+        <card-data-proyecto></card-data-proyecto>
+        <card-data-proyecto></card-data-proyecto>
+        <card-data-proyecto></card-data-proyecto>
+        
+</div>  
+
+ <!-- <div class="p-3 d-flex gap-2 justify-content-center margin-top-114px ">
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+    <card-data-proyecto></card-data-proyecto>
+</div>    -->
+
+
+

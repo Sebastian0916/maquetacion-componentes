@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'card-container-proyecto',
@@ -6,5 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./mat-card.component.scss']
 })
 export class CardProyectoContainerComponent {
+ 
+  constructor(private router : Router){}
 
+  test(rutaRedirecicon : string){
+    this.router.navigate([rutaRedirecicon]);
+  }
 }
