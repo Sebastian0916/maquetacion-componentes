@@ -10,16 +10,34 @@ import { StandardDirective } from '../theme/directivas/standard.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { ContenedorPVComponent } from './components/contenedor-pv/contenedor-pv.component';
+import { PlanoGeneralComponentImg } from './components/plano-general-img/plano-general-img.component';
+import { PlanoGeneralComponent } from './components/plano-general/plano-general.component';
+import { DialogComponent } from './components/plano-general/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { SeleccionInmuebleComponent } from './components/seleccion-inmueble/seleccion-inmueble.component';
 
 @NgModule({
-  declarations: [AppComponent, SizeDirective, StandardDirective, PageHeaderComponent, ContenedorPVComponent],
+  declarations: [
+    AppComponent,
+    SizeDirective,
+    StandardDirective,
+    PageHeaderComponent,
+    ContenedorPVComponent,
+    PlanoGeneralComponentImg,
+    PlanoGeneralComponent,
+    DialogComponent,
+    SeleccionInmuebleComponent,
+  ],
   imports: [
+    MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

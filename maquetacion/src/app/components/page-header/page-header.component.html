@@ -1,4 +1,4 @@
-<div class="pt-2 pb-2 pl-6 pr-6">
+<div class="page-header mat-elevation-z1 pt-2 pb-2 px-6">
   <div class="d-flex justify-content-between align-items-center">
     <div class="d-flex column align-items-start">
       <button mat-button color="primary">
@@ -18,21 +18,35 @@
             placeholder="Pick one"
             aria-label="Number"
             matInput
-            [formControl]="myControl"
             [matAutocomplete]="auto"
           />
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of options" [value]="option">
-              {{ option }}
-            </mat-option>
+            <mat-option> </mat-option>
           </mat-autocomplete>
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </form>
       <mat-form-field appearance="outline">
         <mat-label>Proyectos de vendedor</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <mat-icon matSuffix>expand_more</mat-icon>
+        <mat-select>
+          <mat-option value="option1"
+            >Auxiliar operativo de la venta 14</mat-option
+          >
+          <mat-option value="option2"
+            >Daniel Ricardo Castellano Sepulveda</mat-option
+          >
+          <mat-option value="option3">Sergio Vergara García</mat-option>
+          <mat-option value="option4"
+            >Auxiliar operativo de la venta 14</mat-option
+          >
+          <mat-option value="option4"
+            >Daniel Ricardo Castellano Sepulveda</mat-option
+          >
+          <mat-option value="option4">Sergio Vergara García</mat-option>
+          <mat-option value="option5"
+            >Auxiliar operativo de la venta 14</mat-option
+          >
+        </mat-select>
       </mat-form-field>
     </div>
   </div>

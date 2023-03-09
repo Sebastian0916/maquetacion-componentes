@@ -1,0 +1,175 @@
+<div class="page-header mat-elevation-z1 py-2 px-6">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex column align-items-start">
+      <button mat-button color="primary" routerLink="">
+        Volver
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <div class="d-flex align-items-center gap-1">
+        <h6 class="color-text-primary">Plano general</h6>
+        <p class="mat-subtitle-1 color-text-secondary text">
+          Proyecto: Arboleda de chicala
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-card class="card d-flex column justify-content-center">
+  <mat-card-content
+    class="d-flex row justify-content-between align-items-center p-4"
+  >
+    <button mat-fab extended class="mostrar-plano" routerLink="/plano-general" >
+      Cerrar plano
+      <mat-icon>view_in_ar</mat-icon>
+    </button>
+    <div class="d-flex justify-content-end align-items-center gap-1">
+      <mat-form-field appearance="outline">
+        <mat-label>Nomenclatura</mat-label>
+        <input matInput placeholder="Placeholder" />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-select">
+        <mat-label>Piso</mat-label>
+        <mat-select>
+          <mat-option>Chicala 1</mat-option>
+          <mat-option>Chicala 2</mat-option>
+          <mat-option>Chicala 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-button-toggle-group color="primary">
+        <mat-button-toggle class="primary-main"
+          >Chicala Etapa 1 - Altos de M...</mat-button-toggle
+        >
+        <mat-button-toggle
+          value="italic"
+          class="primary-dark"
+          [matMenuTriggerFor]="menu"
+          ><mat-icon>arrow_drop_down</mat-icon></mat-button-toggle
+        >
+      </mat-button-toggle-group>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/seleccion-inmueble">
+          Chicala Etapa 1 - Altos de Montecielo del norte I
+        </button>
+        <button mat-menu-item routerLink="/seleccion-inmueble">
+          Chicala Etapa 1 - Altos de Montecielo del norte II
+        </button>
+        <button mat-menu-item>
+          Chicala Etapa 1 - Altos de Montecielo del norte III
+        </button>
+        <button mat-menu-item>
+          Chicala Etapa 1 - Altos de Montecielo del norte IV
+        </button>
+        <button mat-menu-item>
+          Chicala Etapa 1 - Altos de Montecielo del norte V
+        </button>
+        <button mat-menu-item>
+          Chicala Etapa 1 - Altos de Montecielo del norte VI
+        </button>
+        <button mat-menu-item>
+          Chicala Etapa 1 - Altos de Montecielo del norte VII
+        </button>
+        <button mat-menu-item>
+          Chicala Etapa 1 - Altos de Montecielo del norte VIII
+        </button>
+      </mat-menu>
+    </div>
+  </mat-card-content>
+</mat-card>
+<div class="d-flex ml-20">
+  <div class="img-content ml-4">
+    <img src="../../../assets/img/Proyecto.svg" alt="" />
+  </div>
+  <div class="ml-10 contenedor">
+    <section class="d-flex column align-items-end gap-2">
+      <div *ngFor="let card of cards">
+      <aside class="d-flex align-items-end gap-2">
+        <mat-card class="card-proyectoV">
+          <mat-card-header class="d-flex align-items-center p-4 mat-subtitle-1">
+            <div class="d-flex align-items-center gap-8">
+              Chicala E1 - Apartamento tipo...
+              <button mat-icon-button color="primary">
+                <mat-icon class="mat-icon-outlined">map</mat-icon>
+              </button>
+            </div>
+          </mat-card-header>
+          <mat-card-content
+            class="d-flex column align-items-start p-4 gap-1 content-plano"
+          >
+            <div class="d-flex column align-items-start">
+              <p class="mat-subtitle-2 color-primary">Características</p>
+              <p class="mat-body-1 color-text-secondary">
+                Área construida de 45,42 m + 3 baños + 5 habitaciones en
+                exclusiva zona...
+              </p>
+            </div>
+            <section class="d-flex align-items-start gap-1 info-proyectoV">
+              <div
+                class="d-flex column align-items-center p-3 gap-1 disponibles"
+              >
+                <mat-label class="color-text-primary text"
+                  >Disponibles</mat-label
+                >
+                <p class="mat-subtitle-2 color-text-primary">80</p>
+              </div>
+              <div class="d-flex column align-items-center p-3 gap-1 vendidos">
+                <mat-label class="color-text-primary text">Vendidos</mat-label>
+                <p class="mat-subtitle-2 color-text-primary">64</p>
+              </div>
+              <div
+                class="d-flex column align-items-center p-3 gap-1 reservadas"
+              >
+                <mat-label class="color-text-primary text"
+                  >Reservadas</mat-label
+                >
+                <p class="mat-subtitle-2 color-text-primary">0</p>
+              </div>
+            </section>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card-proyectoV">
+          <mat-card-header class="d-flex align-items-center p-4 mat-subtitle-1">
+            <div class="d-flex align-items-center gap-8">
+              Chicala E1 - Apartamento tipo...
+              <button mat-icon-button color="primary">
+                <mat-icon class="mat-icon-outlined">map</mat-icon>
+              </button>
+            </div>
+          </mat-card-header>
+          <mat-card-content
+            class="d-flex column align-items-start p-4 gap-1 content-plano"
+          >
+            <div class="d-flex column align-items-start">
+              <p class="mat-subtitle-2 color-primary">Características</p>
+            </div>
+            <section
+              class="d-flex align-items-end gap-1 info-proyectoV info-proyectoV2"
+            >
+              <div
+                class="d-flex column align-items-center p-3 gap-1 disponibles"
+              >
+                <mat-label class="color-text-primary text"
+                  >Disponibles</mat-label
+                >
+                <p class="mat-subtitle-2 color-text-primary">80</p>
+              </div>
+              <div class="d-flex column align-items-center p-3 gap-1 vendidos">
+                <mat-label class="color-text-primary text">Vendidos</mat-label>
+                <p class="mat-subtitle-2 color-text-primary">64</p>
+              </div>
+              <div
+                class="d-flex column align-items-center p-3 gap-1 reservadas"
+              >
+                <mat-label class="color-text-primary text"
+                  >Reservadas</mat-label
+                >
+                <p class="mat-subtitle-2 color-text-primary">0</p>
+              </div>
+            </section>
+          </mat-card-content>
+        </mat-card>
+      </aside>
+    </div>
+    </section>
+  </div>
+</div>

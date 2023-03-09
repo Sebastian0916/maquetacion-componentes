@@ -7,6 +7,5 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./page-header.component.scss'],
 })
 export class PageHeaderComponent {
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
+
 }

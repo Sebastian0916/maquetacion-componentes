@@ -1,18 +1,44 @@
-<section class="d-flex column align-items-start gap-2">
-  <aside class="d-flex align-items-start gap-2">
-    <mat-card>
-      <mat-card-header class="p-3">Porto allegre 88 Av Calle 58...</mat-card-header>
-      <mat-card-content class="d-flex column gap-1 pt-6 pr-4 pb-2 pr-4">
-        <article class="d-flex column align-items-center py-3 gap-2">
-          <img src="../../../assets/img/logocCard.png" alt="logo" />
-        </article>
-        <article>
-          <div class="d-flex align-items-center justify-content-between">
-            <p class="mat-subtitle-2 color-primary">Total unidades</p>
-            <p class="">945</p>
-          </div>
-        </article>
-      </mat-card-content>
-    </mat-card>
-  </aside>
-</section>
+<app-page-header></app-page-header>
+<div class="d-flex ml-17">
+  <section class="d-flex column align-items-start gap-2 mt-18 ml-3">
+    <aside class="d-flex align-items-start gap-2">
+      <div *ngFor="let card of cards">
+        <mat-card class="card" routerLink="/plano-general">
+          <mat-card-header class="p-3">
+            <h6>{{ card.title }}</h6>
+          </mat-card-header>
+          <mat-card-content class="d-flex column gap-1 pr-4 pb-2 pr-4 logo">
+            <article class="d-flex column align-items-center py-3 gap-2">
+              <img src="../../../assets/img/logocCard.png" alt="logo" />
+            </article>
+            <article>
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="mat-subtitle-2 color-primary">{{ card.cantidadU }}</p>
+                <p class="mat-subtitle-2 color-text-primary">
+                  {{ card.totalU }}
+                </p>
+              </div>
+              <div class="d-flex column justify-content-between gap-2">
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="mat-subtitle-2 color-primary">
+                    {{ card.cantidadV }}
+                  </p>
+                  <p class="mat-subtitle-2 color-text-primary">
+                    {{ card.totalV }}
+                  </p>
+                </div>
+                <mat-progress-bar
+                  mode="determinate"
+                  value="48.08"
+                ></mat-progress-bar>
+              </div>
+              <p class="mat-subtitle-2 text-center mt-1">
+                {{ card.porcentaje }}
+              </p>
+            </article>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </aside>
+  </section>
+</div>

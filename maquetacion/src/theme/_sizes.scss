@@ -11,6 +11,7 @@
     display: none;
   }
 }
+
 //////////// SMALL CONFIGURATION
 // Conversion de REM to PX, 1rem = 10px
 
@@ -64,6 +65,8 @@
     }
     & > .mat-icon {
       @include icon-size(1.6rem, 1.4rem);
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -76,11 +79,13 @@
 // // ICON
 .mat-icon {
   @include icon-size(1.6rem !important, 1.4rem !important);
+  align-items: center;
+  display: flex;
 }
 
 //BUTTON TOGGLE
 .mat-button-toggle-group {
-  @include mat.button-toggle-density(-2);
+  @include mat.button-toggle-density(-4);
 }
 // EXPANSION PANEL
 .mat-expansion-panel {
@@ -135,9 +140,6 @@
 }
 // FAB
 .mat-mdc-fab {
-  & span.mat-mdc-button-touch-target {
-    @include icon-size(3.6rem !important, null);
-  }
   &:not(.mdc-fab--extended) {
     width: 3.6rem;
     height: 3.6rem;
@@ -169,7 +171,7 @@
   --mdc-checkbox-state-layer-size: 38px;
   padding: 10px !important;
   .mdc-checkbox__background {
-    @include icon-size(16px, " ");
+    @include icon-size(16px, null);
   }
 }
 // DATA TABLE
@@ -194,10 +196,9 @@
   }
 }
 // ICON BUTTON
-.mat-mdc-icon-button.mat-mdc-button-base,
-.mat-mdc-button-touch-target {
+.mat-mdc-icon-button.mat-mdc-button-base {
   @include icon-size(3.2rem !important, null);
-  padding: 0.4rem !important;
+  padding: 0.3rem 0.4rem !important;
   & > .mat-icon {
     @include icon-size(1.6rem !important, 1.4rem !important);
   }
@@ -205,9 +206,7 @@
 /// MEDIUM CONFIGURATION
 
 .medium {
-  //////////////// MEDIUM ////////////////
-  //TOGGLE BUTTON
-
+  // MENÚ
   .mat-mdc-menu-item.mdc-list-item {
     min-height: 4.4rem !important;
   }
@@ -269,6 +268,8 @@
   // ICON
   .mat-icon {
     @include icon-size(2rem !important, 1.8rem !important);
+    display: flex;
+    align-items: center;
   }
   //BUTTON TOGGLE
   @include mat.button-toggle-density(0);
@@ -366,5 +367,7 @@
   // ICON
   &.mat-icon {
     @include icon-size(3.5rem !important, 3rem!important);
+    display: flex;
+    align-items: center;
   }
 }
