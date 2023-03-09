@@ -8,8 +8,9 @@ import { MaterialModule } from 'src/theme/material.module';
 import { SizeDirective } from 'src/theme/directivas/size.directive';
 import { StandardDirective } from '../theme/directivas/standard.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrientationDirective } from 'src/theme/directivas/orientation.directive';
 @NgModule({
-  declarations: [AppComponent, SizeDirective,StandardDirective],
+  declarations: [AppComponent, SizeDirective,StandardDirective,OrientationDirective],
   imports: [
     FormsModule,
     ReactiveFormsModule,
