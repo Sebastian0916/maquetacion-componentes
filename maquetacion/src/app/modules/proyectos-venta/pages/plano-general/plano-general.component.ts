@@ -8,6 +8,10 @@ import { Conjuntos } from '../../interfaces/conjuntos';
   styleUrls: ['./plano-general.component.scss']
 })
 export class PlanoGeneralComponent {
+
+  verPlano:boolean = true
+  cerrarPlano:boolean = false
+
   listConjuntos: Conjuntos[] =[
     {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte I'},
     {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte II'},
@@ -16,7 +20,13 @@ export class PlanoGeneralComponent {
     {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte V'},
     {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte VI'},
     {etapa: 'Chicala Etapa-1',nombre:'Altos de Montecielo del norte VII'},
+
   ];
+  
+  displayComponent(){
+      this.verPlano =!this.verPlano;
+      this.cerrarPlano =!this.cerrarPlano
+  }
 }
 
   

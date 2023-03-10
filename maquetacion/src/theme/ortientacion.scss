@@ -1,16 +1,13 @@
 .mat-mdc-tab-group.vertical {
   flex-direction: row !important;
-  height: auto;
-  flex-grow: 1;
-  overflow: hidden;
-  max-height: 100%;
+  max-height: 562px;
   .mat-mdc-tab-header-pagination {
     box-sizing: border-box;
   }
   .mat-mdc-tab-header {
     flex-direction: column !important;
     width: auto;
-    min-height: 48px;
+    min-height: 4.8rem;
     border-right: 1px solid;
     border-color: rgba(16, 24, 64, 0.12);
   }
@@ -18,9 +15,6 @@
     flex-direction: column;
   }
   .mat-mdc-tab-list {
-    display: flex;
-    flex: 1 1 auto;
-    white-space: nowrap;
     overflow-y: auto;
     overflow-x: hidden;
     &::-webkit-scrollbar {
@@ -38,8 +32,11 @@
     flex: 1 1 auto;
   }
   .mat-mdc-tab-body-content {
-    height: 100%;
-    padding-inline: 2.4rem;
+    padding-inline: 1rem;
+    padding-bottom: 2.5rem;
+  }
+  &.mat-tabs-with-background > .mat-mdc-tab-header {
+    border: none;
   }
   &.medium{
     .mdc-tab-indicator{
@@ -48,7 +45,3 @@
   }
 }
 
-.mat-mdc-tab-group.mat-tabs-with-background > .mat-mdc-tab-header {
-  border: none;
-}
-  

@@ -5,6 +5,7 @@ import { CardDataProyectoComponent } from './card-data-proyecto/card-data-proyec
 import { CardMenuContainerComponent } from './card-menu-container/card-menu-container.component';
 import { ModalPlanosComponent } from './modal-planos/modal-planos.component';
 import { MaterialModule } from 'src/theme/material.module';
+import { MapImageReferenceComponent } from './map-image-reference/map-image-reference.component';
 
 
 
@@ -14,6 +15,7 @@ import { MaterialModule } from 'src/theme/material.module';
     CardProyectoContainerComponent,
     ModalPlanosComponent,
     CardDataProyectoComponent,
+    MapImageReferenceComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { MaterialModule } from 'src/theme/material.module';
     CardProyectoContainerComponent,
     ModalPlanosComponent,
     CardDataProyectoComponent,
+    MapImageReferenceComponent
   ]
 })
 export class ComponentsProyectosVentaModule { }

@@ -9,20 +9,23 @@
     display: none;
   }
 }
-.mat-mdc-chip,
-.mat-md-chip-option {
-  border-radius: 0.4rem !important;
+.mat-mdc-chip,.mat-md-chip-option {
+  --mdc-chip-container-shape-radius:4px;
 }
 //////////// SMALL CONFIGURATION
 // Conversion de REM to PX, 1rem = 10px
 // Componentes con pseudo-clase  :not()
 // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, FORM FIELD )
 :not(.medium) {
-  &.mat-mdc-chip,
-  &.mat-md-chip-option {
+  &.mat-mdc-chip,&.mat-md-chip-option {
     &.mat-mdc-standard-chip .mdc-evolution-chip__checkmark {
       @include icon-size(1.6rem, null);
     }
+    --mdc-chip-container-height:22px;
+    $chip-small-typography: mat.define-typography-config(
+    $body-2: mat.define-typography-level(1.2rem, 1.33333333333, 400,$letter-spacing: 0.16px),
+    );
+    @include mat.typography-level($chip-small-typography, "body-2");
     .mat-mdc-chip-remove .mat-icon {
       @include icon-size(2.2rem !important, 2rem !important);
     }
@@ -50,8 +53,7 @@
       @include icon-size(16px!important, 16px!important);
       padding: 0px 12px !important;
     }
-    & input,
-    .mat-mdc-select {
+    & input,.mat-mdc-select {
       place-self: center;
     }
     @include mat.icon-button-density(-4);
@@ -111,10 +113,6 @@
   .mat-mdc-icon-button .mat-mdc-button-touch-target {
     @include icon-size(3.6rem, null);
   }
-}
-// SUFFIX
-.mat-mdc-form-field-icon-suffix > .mat-icon {
-  padding: 0.5714285714285714rem;
 }
 // TAB
 .mat-mdc-tab-header {
@@ -367,3 +365,5 @@
     align-items: center;
   }
 }
+
+

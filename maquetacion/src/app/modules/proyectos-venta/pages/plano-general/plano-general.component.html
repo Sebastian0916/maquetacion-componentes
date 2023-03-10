@@ -3,12 +3,11 @@
 </header-page>
 
 <card-menu-container>
-        <button container-left mat-fab extended color="accent">
+        <button (click)="displayComponent()" container-left mat-fab extended color="accent">
         <mat-icon>view_in_ar</mat-icon>
-        Ver plano
+        {{verPlano?"Ver plano":"Cerrar plano"}}
         </button>   
          
-
         <mat-form-field container-right appearance="outline" >
                 <mat-label>Nomenclatura</mat-label>
                 <input matInput placeholder="Ej.AP">
@@ -36,28 +35,12 @@
 </card-menu-container>
 
 
- <div  class="container-img col-6 margin-top-114px ml-4">
-        <img src="assets/foto_referencia.jpg" alt="foto" width="100%" height="459px">
-        <mat-radio-button class="absolute top-left-9" value="1" checked ></mat-radio-button>
-        <mat-radio-button class="absolute top-left-23X47"value="1"  ></mat-radio-button>
-        <mat-radio-button class="absolute top-left-34X73"value="1"  ></mat-radio-button>
-        <button class="col-2 absolute-important mat-subtitle-2 top-left-10X15"  mat-flat-button>Chicala 1</button>
-</div>
-    
-<div class="container-cards col-6 row justify-content-center gap-2 absolute-important margin-top-114px " >
-        <card-data-proyecto></card-data-proyecto>
-        <card-data-proyecto></card-data-proyecto>
-        <card-data-proyecto></card-data-proyecto>
-        <card-data-proyecto></card-data-proyecto>
-        
-        <card-data-proyecto></card-data-proyecto>
-        <card-data-proyecto></card-data-proyecto>
-        <card-data-proyecto></card-data-proyecto>
-        <card-data-proyecto></card-data-proyecto>
-        
-</div>  
+<ng-container *ngIf="cerrarPlano" >
+        <map-image-reference></map-image-reference>
+</ng-container>
 
- <!-- <div class="p-3 d-flex gap-2 justify-content-center margin-top-114px ">
+<ng-container *ngIf="!cerrarPlano">
+ <div class="p-3 d-flex gap-2 justify-content-center margin-top-134px ">
     <card-data-proyecto></card-data-proyecto>
     <card-data-proyecto></card-data-proyecto>
     <card-data-proyecto></card-data-proyecto>
@@ -70,7 +53,6 @@
     <card-data-proyecto></card-data-proyecto>
     <card-data-proyecto></card-data-proyecto>
     <card-data-proyecto></card-data-proyecto>
-</div>    -->
-
-
+</div>   
+</ng-container>
 
