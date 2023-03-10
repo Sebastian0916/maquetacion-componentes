@@ -1,0 +1,17 @@
+.plano{
+    width: 49%;
+    & img{
+       width: 612px;
+    }
+}
+
+.card{
+    width: 51%; 
+    height: 100%;
+}
+
+.scroll{
+    height: 530px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}

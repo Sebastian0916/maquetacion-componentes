@@ -1,0 +1,43 @@
+<header class="page-header column py-2 px-6 mat-elevation-z1">
+  <div class="row justify-content-between align-items-center">
+    <div class="column">
+      <div class="d-flex align-items-center ">
+        <button mat-button color="primary">
+          <mat-icon matIconSuffix>keyboard_arrow_left</mat-icon>Volver
+        </button>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <h6>Proyectos en venta</h6>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end aling-items-start gap-1">
+      <mat-form-field appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input
+          type="text"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-icon class="opacity-50" matSuffix>search</mat-icon>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Proyectos por vendedor</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let Proyectos of proyectosPorVendedor"
+            [value]="Proyectos.value"
+          >
+            {{ Proyectos.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</header>

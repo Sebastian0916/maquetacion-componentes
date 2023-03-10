@@ -1,0 +1,53 @@
+<mat-card class="column justify-content-center prueba">
+  <mat-card-content class="row justify-content-between align-items-center p-4">
+    <button
+      mat-fab
+      extended
+      color="accent"
+      class="row align-items-center gap-1"
+    >
+      <mat-icon matIconPrefix>view_in_ar</mat-icon>Ver plano
+    </button>
+    <div class="row justify-content-end align-items-center gap-1">
+      <mat-form-field appearance="outline">
+        <mat-label>Nomenclatura</mat-label>
+        <input
+          placeholder="Ej. AP"
+          type="text"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-icon class="opacity-50" matSuffix>search</mat-icon>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="text-field">
+        <mat-label>Piso</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let Piso of Pisos" [value]="Piso.value">
+            {{ Piso.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-button-toggle-group class="row align-items-center">
+        <mat-button-toggle class="backg">Chicala Etapa 1 - Altos de M...</mat-button-toggle>
+        <mat-button-toggle class="backglight" [matMenuTriggerFor]="menu">
+          <mat-icon>arrow_drop_down</mat-icon>
+          <mat-menu #menu="matMenu">
+            <mat-option
+              *ngFor="let Proyecto of Proyectos"
+              [value]="Proyecto.value"
+            >
+              {{ Proyecto.viewValue }}
+            </mat-option>
+          </mat-menu>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </mat-card-content>
+</mat-card>

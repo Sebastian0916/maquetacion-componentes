@@ -4,7 +4,6 @@
 // @use "@material/chips";
 @import "./mixins";
 @include mat.core();
-
 // Eliminacion hint elemento de form field componente
 [class*="mat-mdc-form-field-subscript-wrapper"] {
   &:not(:has(:only-child mat-hint)) {
@@ -13,7 +12,6 @@
 }
 //////////// SMALL CONFIGURATION
 // Conversion de REM to PX, 1rem = 10px
-
 // Componentes con pseudo-clase  :not()
 // Brinda dar mayor especificidad al aplicar densidad   ( BUTTONS , MAT-CHIP, MAT-CHIP-OPTION, FORM FIELD )
 :not(.medium) {
@@ -72,15 +70,15 @@
   width: 4rem !important;
   height: 4rem !important;
 }
-
 // // ICON
 .mat-icon {
   @include icon-size(1.6rem !important, 1.4rem !important);
+  align-items: center;
+  display: flex;
 }
-
 //BUTTON TOGGLE
 .mat-button-toggle-group {
-  @include mat.button-toggle-density(-2);
+  @include mat.button-toggle-density(-4);
 }
 // EXPANSION PANEL
 .mat-expansion-panel {
@@ -100,7 +98,7 @@
   @include mat.icon-button-density(-3);
   @include mat.list-density(-3);
   .mat-mdc-icon-button.mat-mdc-button-base {
-    padding: 1rem;
+    padding: 0.8rem !important;
   }
   .mat-icon {
     @include icon-size(1.8rem, 1.8rem);
@@ -128,12 +126,13 @@
     --mdc-slider-active-track-height: 0.2rem;
   }
 }
+.mat-mdc-slider-visual-thumb .mat-ripple {
+  @include icon-size(3.2rem !important, null);
+  margin: 0.8rem;
+  border-radius: 1.6rem;
+}
 // FAB
 .mat-mdc-fab {
-  & span.mat-mdc-button-touch-target {
-    height: 3.6rem !important ;
-    width: 3.6rem !important;
-  }
   &:not(.mdc-fab--extended) {
     width: 3.6rem;
     height: 3.6rem;
@@ -165,7 +164,7 @@
   --mdc-checkbox-state-layer-size: 38px;
   padding: 10px !important;
   .mdc-checkbox__background {
-    @include icon-size(16px, " ");
+    @include icon-size(16px, null);
   }
 }
 // DATA TABLE
@@ -198,11 +197,8 @@
   }
 }
 /// MEDIUM CONFIGURATION
-
 .medium {
-  //////////////// MEDIUM ////////////////
-  //TOGGLE BUTTON
-
+  // MENÚ
   .mat-mdc-menu-item.mdc-list-item {
     min-height: 4.4rem !important;
   }
@@ -245,7 +241,6 @@
       @include mat.form-field-density(-4.5);
     }
   }
-
   // BUTTON
   &.mdc-button {
     &:not(.large, .small) {
@@ -264,6 +259,8 @@
   // ICON
   .mat-icon {
     @include icon-size(2rem !important, 1.8rem !important);
+    display: flex;
+    align-items: center;  
   }
   //BUTTON TOGGLE
   @include mat.button-toggle-density(0);
@@ -283,14 +280,14 @@
     height: 2.857142857142857rem;
   }
   // SLIDER
-  .mat-mdc-slider
-    .mdc-slider__track--inactive
-    .mat-mdc-slider
-    .mdc-slider__track {
-    --mdc-slider-inactive-track-height: 0.2857142857142857rem;
-  }
-  .mat-mdc-slider .mdc-slider__track--active {
-    --mdc-slider-inactive-track-height: 0.4285714285714286rem;
+  &.mat-mdc-slider,
+  .mdc-slider__track--inactive,
+  .mat-mdc-slider,
+  .mdc-slider__track {
+    --mdc-slider-inactive-track-height: 0.4rem !important;
+    &.mat-mdc-slider .mdc-slider__track--active {
+      --mdc-slider-active-track-height: 0.6rem !important;
+    }
   }
   // FAB
   &.mat-mdc-fab {
@@ -330,8 +327,7 @@
   &.mat-mdc-fab {
     & span.mat-mdc-button-touch-target:not(.mdc-fab--extended),
     &:not(.mdc-fab--extended) {
-      height: 5.6rem !important ;
-      width: 5.6rem !important;
+      @include icon-size(5.6rem !important, null);
     }
     &.mat-mdc-extended-fab {
       height: 4.8rem !important;
@@ -362,5 +358,7 @@
   // ICON
   &.mat-icon {
     @include icon-size(3.5rem !important, 3rem!important);
+    display: flex;
+    align-items: center;
   }
 }

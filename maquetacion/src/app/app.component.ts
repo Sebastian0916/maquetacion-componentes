@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {FormControl} from '@angular/forms';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -42,4 +43,6 @@ export class AppComponent {
   ];
 
   panelOpenState = false;
+  myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
 }
